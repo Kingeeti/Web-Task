@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background: linear-gradient(to right, #e0eafc 0%, #cfdef3 100%);
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .skills {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills li {
+            background: #f0f4f8;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            color: #2c3e50;
+            transition: background 0.3s;
+        }
+        .skills li:hover {
+            background: #d9e2ec;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        form input, form button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form button {
+            background-color: #2c3e50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        form button:hover {
+            background-color: #1a252f;
+        }
+        .location {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .songs h4 {
+            color: #2c3e50;
+        }
+        .songs audio {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Me</h1>
+        <div style="display: flex; align-items: center;">
+            <p style="flex: 1;">
+                Hello! My name is Geeti Fatima. I am passionate about my software engineering degree.
+                I have always been fascinated by technology and how it can be used to solve real-world problems.
+                My journey in software engineering has been incredibly rewarding, and I am constantly learning new things.
+                In my free time, I enjoy working on personal projects, exploring new programming languages, and contributing to open-source communities.
+                I believe in the power of collaboration and continuous improvement, and I am excited to see where my career in software engineering will take me.
+            </p>
+            <img src="PHOTO.jpg" alt="Picture of me" style="flex: 0 0 100px; height: 125px; margin-left: 20px; border: 2px solid #2c3e50;">
+        </div>
+        
+        <h2>Favorite Movie Trailer</h2>
+        <div style="text-align: center;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/sB7LEqzXl_Y" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <h2>My Skills</h2>
+        <ul class="skills">
+            <li>Software Development</li>
+            <li>Test Automation</li>
+            <li>Version Control and Collaboration</li>
+            <li>Database Management</li>
+            <li>Business Writing and Communication</li>
+        </ul>
+        
+        <h2>My Location</h2>
+        <p id="location" class="location">Loading location...</p>
+        
+        <h2>Favorite Songs</h2>
+        <div class="songs">
+            <h4>Aya Na Tu by Arjun Kanungo</h4>
+            <audio controls>
+                <source src="song1.mp3" type="audio/mpeg">
+            </audio><br>
+            <h4>12 Bajay by Young Stunners</h4>
+            <audio controls>
+                <source src="song2.mp3" type="audio/mpeg">
+            </audio><br>
+            <h4>Baat Unkahi by Kaavish</h4>
+            <audio controls>
+                <source src="song3.mp3" type="audio/mpeg">
+            </audio><br>
+        </div>
+        
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
+    <script>
+        // JavaScript to get the user's location
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                document.getElementById('location').textContent = 
+                    'Latitude: ' + position.coords.latitude + 
+                    ', Longitude: ' + position.coords.longitude;
+            });
+        } else {
+            document.getElementById('location').textContent = 'Geolocation is not supported by this browser.';
+        }
+    </script>
+</body>
+</html>
