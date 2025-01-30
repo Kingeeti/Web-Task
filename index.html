@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src=".\index.js"></script>
+    console.log("Hello World");
+    let fruits = ["Apple", "Banana"];
+    console.log(fruits.length);
+
+    fruits.push ("Orange");
+    fruits.pop ("Orange");
+    fruits.shift ("Apple");
+    fruits.unshift ("Apple");
+    fruits.splice(1, 0, "Lemon", "Kiwi");
+    fruits.splice(0, 1);
+    console.log(fruits);
+
+    fruits.slice (1, 3);
+    console.log(fruits);
+
+    let result = fruits.indexOf("Banana");
+    console.log(result);
+
+    fruits.forEach((item, index, array) => {
+    console.log(item, index);
+    });
+    console.log(fruits.map(value => value.toUpperCase()));
+    fruits.filter(value => value == "apple");
+    let htmllist = fruits.map(value => `<li>${value}</li>`);
+</body>
+
+</html>
