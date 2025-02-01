@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Enrollment</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .courses, .students {
+            width: 45%;
+        }
+        .students button {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="courses">
+        <h2>Offered Courses</h2>
+        <ul id="courseList">
+            <li>Web Development</li>
+            <li>Stochastic Processes</li>
+            <li>Computer Networks</li>
+            <li>Human Computer Interaction</li>
+            <li>Linear Algebra</li>
+            <li>Technical and Business Writing</li>
+            <li>Design and Analysis of Algorithms</li>
+            <li>Data Science</li>
+            <li>Formal Methods</li>
+            <li>Intro to Software Engineering</li>
+        </ul>
+    </div>
+    <div class="students">
+        <h2>Students</h2>
+        <div id="studentList">
+            <div>
+                <span>Roll No: 22F-3700</span>
+                <button onclick="viewCourses(1)">View</button>
+                <button onclick="modifyCourses(1)">Modify</button>
+            </div>
+            <div>
+                <span>Roll No: 22F-3701</span>
+                <button onclick="viewCourses(2)">View</button>
+                <button onclick="modifyCourses(2)">Modify</button>
+            </div>
+            <div>
+                <span>Roll No: 22F-3702</span>
+                <button onclick="viewCourses(3)">View</button>
+                <button onclick="modifyCourses(3)">Modify</button>
+            </div>
+            <div>
+                <span>Roll No: 22F-3703</span>
+                <button onclick="viewCourses(4)">View</button>
+                <button onclick="modifyCourses(4)">Modify</button>
+            </div>
+            <div>
+                <span>Roll No: 22F-3704</span>
+                <button onclick="viewCourses(5)">View</button>
+                <button onclick="modifyCourses(5)">Modify</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const students = {
+            1: [],
+            2: [],
+            3: [],
+            4: [],
+            5: []
+        };
+
+        function viewCourses(rollNo) {
+            alert(`Student Roll No: ${rollNo}\nEnrolled Courses: ${students[rollNo].join(', ') || 'None'}`);
+        }
+
+        function modifyCourses(rollNo) {
+            const courseList = document.getElementById('courseList').children;
+            let courseOptions = '';
+            for (let i = 0; i < courseList.length; i++) {
+                courseOptions += `${i + 1}. ${courseList[i].innerText}\n`;
+            }
+            const courseIndex = prompt(`Select a course to enroll/unenroll (1-10):\n${courseOptions}`);
+            if (courseIndex < 1 || courseIndex > 10) {
+                alert('Invalid course selection');
+                return;
+            }
+            const courseName = courseList[courseIndex - 1].innerText;
+            const coursePos = students[rollNo].indexOf(courseName);
+            if (coursePos === -1) {
+                if (students[rollNo].length < 7) {
+                    students[rollNo].push(courseName);
+                    alert(`Enrolled in ${courseName}`);
+                } else {
+                    alert('Maximum course capacity reached');
+                }
+            } else {
+                students[rollNo].splice(coursePos, 1);
+                alert(`Unenrolled from ${courseName}`);
+            }
+        }
+    </script>
+</body>
+</html></div></ul></div>
