@@ -1,0 +1,215 @@
+/* Default Light Mode Colors */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #D2E0FB;
+    color: black;
+    cursor: none; /* Hide default cursor */
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Header and Footer */
+header, footer {
+    background-color: #8EACCD;
+    padding: 15px;
+    font-size: 20px; /* Slightly smaller */
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Navigation Links */
+.nav-buttons {
+    margin-top: 20px;
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    background-color: #FEF9D9;
+    color: black;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.nav-buttons a:hover {
+    background-color: #DEE5D4; /* Darker on hover */
+}
+
+/* Cursor Styling */
+.cursor-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid green;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: none;
+}
+
+/* Arrow for Direction */
+.arrow {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #0C0C0C;
+    color: white;
+}
+
+/* Dark Mode Header & Footer */
+.dark-mode header, .dark-mode footer {
+    background-color: #481E14;
+}
+
+/* Dark Mode Links */
+.dark-mode .nav-buttons a {
+    background-color: #9B3922;
+    color: white;
+}
+
+.dark-mode .nav-buttons a:hover {
+    background-color: #F2613F;
+}
+
+/* Theme Toggle Button (Fixed at Bottom Right) */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+    z-index: 1000;
+    color: black; /* Default color for light mode */
+}
+
+#theme-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* Sun (☀️) in Yellow for Dark Mode */
+.dark-mode #theme-toggle {
+    color: yellow;
+}
+
+.big-name {
+    font-size: 4em; /* Double the default h1 size */
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.strength {
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+.faq-container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.faq-item {
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.faq-toggle {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.faq-answer.active {
+    display: block;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cube {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+.cube-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.cube-face {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #FEF9D9;
+    color: black;
+    border: 2px solid #8EACCD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Positioning faces */
+.cube-front { transform: translateZ(60px); }
+.cube-back { transform: rotateY(180deg) translateZ(60px); }
+.cube-top { transform: rotateX(90deg) translateZ(60px); }
+.cube-bottom { transform: rotateX(-90deg) translateZ(60px); }
+.cube-left { transform: rotateY(-90deg) translateZ(60px); }
+.cube-right { transform: rotateY(90deg) translateZ(60px); }
+
+/* Rotate the cube on click */
+.cube.rotated {
+    transform: rotateY(180deg) rotateX(180deg);
+}
